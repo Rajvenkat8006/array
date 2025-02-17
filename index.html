@@ -9,10 +9,11 @@
   
 </body>
 <script>
-  let text = prompt("Enter a String:");
-let option = prompt("Choose an option:\n1. Replace a word\n2. Delete a word");
+ let text = prompt("Enter string").trim(); // Trim spaces from the start and end
+let option = prompt("Choose an option:\n1. Replace a word\n2. Delete a word\n3. Remove space");
 
-let wordsArray = text.split(" ");
+let wordsArray = text.split(/\s+/); // Split by one or more spaces
+
 if (option === "1") {
     let wordToReplace = prompt("Enter the word to replace:");
     let newWord = prompt("Enter the new word:");
@@ -23,7 +24,7 @@ if (option === "1") {
         }
     }
 
-    let updatedText = wordsArray.join(" ");
+    let updatedText = wordsArray.join(" "); // Join with a single space
     console.log("Updated String (Replacement):", updatedText);
 } 
 else if (option === "2") {
@@ -31,12 +32,18 @@ else if (option === "2") {
 
     wordsArray = wordsArray.filter(word => word !== wordToDelete);
 
-    let updatedText = wordsArray.join(" ");
+    let updatedText = wordsArray.join(" "); // Join with a single space
     console.log("Updated String (Deletion):", updatedText);
+} 
+else if (option === "3") {
+    let updatedText = wordsArray.join(""); // Join without any spaces
+    console.log("Updated String (Remove Space):", updatedText);
 } 
 else {
     console.log("Invalid option selected.");
 }
+
+
 
 
 
