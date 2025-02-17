@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+    <header>
+           <title>what bro</title>
+    </header>
+
+<body>
+    <p>Hello bro</p>
+  
+</body>
+<script>
+  let text = prompt("Enter a String:");
+let option = prompt("Choose an option:\n1. Replace a word\n2. Delete a word");
+
+let wordsArray = text.split(" ");
+if (option === "1") {
+    let wordToReplace = prompt("Enter the word to replace:");
+    let newWord = prompt("Enter the new word:");
+
+    for (let i = 0; i < wordsArray.length; i++) {
+        if (wordsArray[i] === wordToReplace) {
+            wordsArray[i] = newWord; 
+        }
+    }
+
+    let updatedText = wordsArray.join(" ");
+    console.log("Updated String (Replacement):", updatedText);
+} 
+else if (option === "2") {
+    let wordToDelete = prompt("Enter the word to delete:");
+
+    wordsArray = wordsArray.filter(word => word !== wordToDelete);
+
+    let updatedText = wordsArray.join(" ");
+    console.log("Updated String (Deletion):", updatedText);
+} 
+else {
+    console.log("Invalid option selected.");
+}
+
+
+
+
+
+</script>
+</html>
